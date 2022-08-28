@@ -1,0 +1,364 @@
+@font-face {
+    font-family: Nasa;
+    src: url("../fonts/nasalization-rg.ttf");
+}
+
+html{
+    box-sizing: border-box;
+    font-family: Nasa;
+}
+
+body{
+    background-color: #1b1919;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ////////// Scroll Bar  ////////// */
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    /* border-radius: 10px; */
+    margin: 0 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255); 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #6c6a6a; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+/* //////////////////// */
+/* Box Main */
+
+.box-main{
+    width: 455px;
+    height: 650px;
+    background-color: #1b1919;
+    box-shadow: -8px -8px 5px -4px #7e7e7e, 5px 5px 5px -4px #7e7e7e;
+    border-radius: 15px;
+}
+
+.fa-align-justify{
+    position: relative;
+    left: 90%;
+    top: 11px;
+    font-size: 30px;
+    color: whitesmoke;
+    transition: all 0.85s;
+}
+
+.fa-align-justify-rotate{
+    cursor: pointer;
+    transform: rotate(-90deg);
+}
+
+.title{
+    color: whitesmoke;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 5px;
+    margin: 15px 0;
+}
+
+.coin-list{
+    width: 426px;
+    height: 543px;
+    margin: 20px auto;
+    /* background-color: #f5f5f591; */
+    overflow: auto;
+    scrollbar-gutter: stable;
+}
+
+table{
+    width: 100%;
+    color: whitesmoke;
+}
+
+table thead tr th{
+    letter-spacing: 2px;
+}
+
+
+table tbody tr:hover{
+    background-color: rgb(73, 73, 73);
+    color: #e3dada;
+    border-radius: 150px;
+    cursor: pointer;
+}
+
+table tbody tr td{
+    border-bottom: 2px solid white;
+    text-align: center;
+    vertical-align:bottom;
+    padding: 15px 0;
+}
+
+table tbody tr td:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table tbody tr td:nth-child(1) p{
+    margin: 0 0 0 5px;
+}
+
+table tbody tr td:nth-child(1) span{
+    margin: 0 0 0 3px;
+    font-size: 10px;
+    background-color: whitesmoke;
+    color: #1b1919;
+    letter-spacing: 1px;
+    border-radius: 2px;
+}
+
+table tbody tr:last-child td{
+    border-bottom: 0;
+}
+
+/* //////////////////// */
+/* Box Detail */
+
+.box-detail{
+    display: none;
+}
+
+.box-detail-active{
+    display: block;
+    /* width: 990px; */
+    height: 650px;
+    background-color: #1b1919;
+    border-radius: 15px;
+    margin: 0 0 0 15px;
+    animation-name: openWidth;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.box-detail-deactive{
+    height: 650px;
+    background-color: #1b1919;
+    border-radius: 15px;
+    margin: 0 0 0 15px;
+    animation-name: closeWidth;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.box-navbar-deactive{
+    display: none;
+}
+
+.box-content-deactive{
+    display: none;
+}
+
+.box-navbar{
+    display: block;
+    width: 100%;
+    height: 65px;
+    border-radius: 15px;
+    margin: 0 0 5px 0;
+    box-shadow: inset 1px 1px 7px #c2c2c2,inset -1px -1px 7px #c2c2c2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.box-navbar .info-detail, .chart-change-price, .history{
+    color: whitesmoke;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 0 0 0 25px;
+    transition: all 0.70s;
+}
+
+.box-navbar .chart-change-price:hover{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.box-navbar .info-detail:hover{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.box-navbar .history:hover{
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.box-content{
+    display: block;
+    width: 100%;
+    height: 575px;
+    border-radius: 15px;
+    box-shadow: inset 1px 1px 7px #c2c2c2,inset -1px -1px 7px #c2c2c2;
+
+}
+
+.box-content div:not(:nth-child(1)){
+    display: none;
+}
+
+/* .deactive{
+    display: none;
+} */
+
+.box-content .content-detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.box-content .content-detail .section1{
+    display: block;
+    width: 39%;
+    height: 95%;
+    border-radius: 15px;
+}
+
+.box-content .content-detail .seprate-line{
+    display: block;
+    width: 3px;
+    height: 90%;
+    margin: 0 0 0 15px;
+    background-color: rgb(162, 162, 162);
+}
+
+.box-content .content-detail .section2{
+    display: block;
+    width: 60%;
+    height: 95%;
+    border-radius: 15px;
+}
+
+.box-content .content-detail .section1 .info-coin{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box-content .content-detail .section1 img{
+    width: 150px;
+    height: 150px;
+}
+
+.box-content .content-detail .section1 .title-coin{
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+.box-content .content-detail .section1 .price-coin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 30px;
+    margin: 35px;
+}
+
+.box-content .content-detail .section1 .price-coin .status-price-coin{
+    margin: 0 20px;
+}
+
+.box-content .content-detail .section1 .price-change-percent{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px auto;
+    width: 340px;
+    height: 150px;
+}
+
+.box-content .content-detail .section1 .price-change-percent .row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: whitesmoke;
+}
+
+.box-content .content-detail .section1 .price-change-percent .row div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-content .content-detail .section1 .price-change-percent h5{
+    margin: 0 0 0 10px;
+}
+
+.box-content .content-detail .section1 .price-change-percent h5 i{
+    margin: 0 5px 0 0;
+}
+
+.fa-arrow-down{
+    color: red;
+}
+
+.fa-arrow-up{
+    color: green;
+}
+
+.box-content .content-detail .section2 div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: whitesmoke;
+}
+
+.box-content .content-detail .section2 hr{
+    margin: 0 50px;
+}
+
+/* //// */
+
+.box-content .content-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#myChart{
+    width: 2500px;
+    height: 2500px;
+}
+
+
+/* Animations */
+@keyframes openWidth{
+    from{
+        width: 0;
+    }
+    to{
+        width: 990px;
+    }
+}
+
+@keyframes closeWidth{
+    from{
+        width: 990px;
+    }
+    to{
+        width: 0;
+    }
+}
